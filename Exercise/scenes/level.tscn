@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dimy6khwuou32"]
+
+[ext_resource type="PackedScene" uid="uid://c2oagk8jcshb" path="res://scenes/trade.tscn" id="1_4bnbf"]
+
+[node name="Level" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-724.0]
+metadata/_edit_horizontal_guides_ = [-1283.0]
+
+[node name="Trade" parent="." instance=ExtResource("1_4bnbf")]

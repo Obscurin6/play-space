@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2oagk8jcshb"]
+
+[ext_resource type="Texture2D" uid="uid://cij1i60k33jnm" path="res://images/bed.png" id="1_ivpv7"]
+[ext_resource type="Script" path="res://scripts/Control.gd" id="2_m8a2y"]
+
+[node name="Trade" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(239, 211)
+scale = Vector2(0.232394, 0.232394)
+texture = ExtResource("1_ivpv7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.1
+anchor_right = 0.6
+anchor_bottom = 0.4
+color = Color(98.816, 65.68, 0, 1)
+
+[node name="MainInterface" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.47
+anchor_top = 0.125
+anchor_right = 0.582
+anchor_bottom = 0.351
+offset_left = -7.40002
+offset_right = 0.279907
+script = ExtResource("2_m8a2y")
+
+[node name="BuyButton" type="Button" parent="CanvasLayer/MainInterface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.1
+text = "Купить"
+
+[node name="SellButton" type="Button" parent="CanvasLayer/MainInterface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.16
+anchor_right = 0.75
+anchor_bottom = 0.287
+offset_left = 0.320007
+offset_top = -0.052803
+offset_right = -0.0399933
+offset_bottom = -0.0509644
+text = "Продать"
+
+[node name="PlayerWalletLabel" type="Label" parent="CanvasLayer/MainInterface"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.947
+anchor_bottom = 0.455
+offset_left = -17.0
+offset_top = 40.0
+offset_right = -167.916
+offset_bottom = -48.0564
+text = "Кошелек игрока: $1000"
+
+[node name="PlayerInventoryList" type="ItemList" parent="CanvasLayer/MainInterface"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 95.0
+offset_right = 124.0
+offset_bottom = 182.0
+item_count = 2
+item_0/text = "Ручка"
+item_1/text = "Холодильник"
+
+[node name="MarketInventoryList" type="ItemList" parent="CanvasLayer/MainInterface"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 93.0
+offset_right = 263.0
+offset_bottom = 180.0
+item_count = 2
+item_0/text = "Пирог"
+item_1/text = "Ягода"

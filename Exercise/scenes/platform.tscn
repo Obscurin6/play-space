@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyypmn0cb3d7f"]
+
+[ext_resource type="PackedScene" uid="uid://bwbfmgru8v5y3" path="res://player/player.tscn" id="1_otkoy"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_lm5cu"]
+[ext_resource type="PackedScene" uid="uid://1pyk8rvrsixn" path="res://objects/bed.tscn" id="3_k0tlp"]
+[ext_resource type="Texture2D" uid="uid://b3iqwxblma0e7" path="res://images/map.jpeg" id="4_kysoe"]
+[ext_resource type="Texture2D" uid="uid://dfwrgf4bomb2w" path="res://images/icon.svg" id="5_yrye1"]
+[ext_resource type="Script" path="res://scripts/Logo.gd" id="6_13qm6"]
+
+[sub_resource type="GDScript" id="GDScript_ru1dm"]
+script/source = "extends Node2D
+
+var test_array: Array[String] = [\"test\",\"my\",\"code\"]
+var i: int = 0
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	for b in test_array:
+		print(b)
+	if i > 4:
+			i = 1 * delta
+
+"
+
+[node name="Platform" type="Node2D"]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("1_otkoy")]
+position = Vector2(326, 112)
+script = ExtResource("2_lm5cu")
+
+[node name="Bed" parent="." instance=ExtResource("3_k0tlp")]
+position = Vector2(394, 98)
+script = SubResource("GDScript_ru1dm")
+
+[node name="map" type="Sprite2D" parent="."]
+position = Vector2(316, 255)
+scale = Vector2(0.372917, 0.372917)
+texture = ExtResource("4_kysoe")
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture = ExtResource("5_yrye1")
+script = ExtResource("6_13qm6")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwbfmgru8v5y3"]
+
+[ext_resource type="Texture2D" uid="uid://csyuit1fiowt5" path="res://images/character.png" id="1_8ko3v"]
+[ext_resource type="Texture2D" uid="uid://csmum16vcd5t3" path="res://images/laser.jpg" id="2_7888m"]
+
+[node name="player" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_8ko3v")
+region_enabled = true
+region_rect = Rect2(8.90915, 321.364, 22.7273, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(21.3333, -6)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_7888m")
+region_enabled = true
+region_rect = Rect2(78.136, 15.4546, 65.4546, 188.182)
